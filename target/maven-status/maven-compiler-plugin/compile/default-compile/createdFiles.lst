@@ -1,0 +1,12 @@
+org\example\BookFilterApp.class
+org\example\entity\Book.class
+org\example\service\FilterService.class
+org\example\controller\FilterController.class
+org\example\entity\FilterCriteria.class
+org\example\repository\FilterRepository.class
+org\example\service\FilterServiceImpl.class
+org\example\repository\BookRepository.class
+org\example\service\BookServiceImpl.class
+org\example\entity\FilterCondition.class
+org\example\service\BookService.class
+org\example\entity\FilterOption.class
