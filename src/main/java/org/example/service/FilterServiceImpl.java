@@ -20,7 +20,9 @@ public class FilterServiceImpl implements FilterService {
 
     @Override
     public Filter createNewFilter(Filter filter) {
-        filter.getFilterCriteria().forEach(criteria ->  criteria.setFilter(filter));
+        if (filter.getFilterCriteria() != null) {
+            filter.getFilterCriteria().forEach(criteria ->  criteria.setFilter(filter));
+        }
         return repository.saveAndFlush(filter);
     }
 }

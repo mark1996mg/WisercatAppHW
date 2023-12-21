@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "FILTERS")
@@ -42,5 +43,18 @@ public class Filter {
 
     public void setFilterCriteria(List<FilterCriteria> filterCriteria) {
         this.filterCriteria = filterCriteria;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Filter filter = (Filter) o;
+        return Objects.equals(id, filter.id) && Objects.equals(name, filter.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }

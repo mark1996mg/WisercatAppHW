@@ -3,6 +3,8 @@ package org.example.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "FILTER_CRITERIA")
 public class FilterCriteria {
@@ -65,5 +67,18 @@ public class FilterCriteria {
 
     public void setSearchValue(String searchValue) {
         this.searchValue = searchValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FilterCriteria that = (FilterCriteria) o;
+        return Objects.equals(id, that.id) && filterOption == that.filterOption && condition == that.condition && Objects.equals(searchValue, that.searchValue) && Objects.equals(filter, that.filter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, filterOption, condition, searchValue, filter);
     }
 }
