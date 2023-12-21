@@ -20,6 +20,7 @@ public class FilterServiceImpl implements FilterService {
 
     @Override
     public Filter createNewFilter(Filter filter) {
-        return repository.save(filter);
+        filter.getFilterCriteria().forEach(criteria ->  criteria.setFilter(filter));
+        return repository.saveAndFlush(filter);
     }
 }

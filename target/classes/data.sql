@@ -10,15 +10,15 @@ INSERT INTO books (title, author, genre, publishing_date, copies_sold)
 VALUES ('Guns, Germs, and Steel', 'Jared Diamond', 'Nonfiction', DATE '1997-01-01', 13550);
 
 INSERT INTO filters (id, name)
-VALUES (1, 'My Filter 1');
+VALUES (100000000, 'My Filter 1');
 INSERT INTO filters (id, name)
-VALUES (2, 'My Filter 2');
+VALUES (200000000, 'My Filter 2');
 
 INSERT INTO filter_criteria (filter_option, condition, search_value, filter_id)
-VALUES ('TITLE', 'STARTS_WITH', 'The Great', 1);
+VALUES ('TITLE', 'STARTS_WITH', 'The Great', 100000000);
 INSERT INTO filter_criteria (filter_option, condition, search_value, filter_id)
-VALUES ('AMOUNT', 'MORE', '20000', 2);
+VALUES ('AMOUNT', 'MORE', '20000', 200000000);
 INSERT INTO filter_criteria (filter_option, condition, search_value, filter_id)
-VALUES ('DATE', 'LESS', '1990-01-01', 2);
+VALUES ('DATE', 'LESS', '1990-01-01', 200000000);
 
 
